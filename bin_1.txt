@@ -1,0 +1,252 @@
+# import rosbag2_py
+# import pandas as pd
+
+# def bag_to_csv(bag_file, csv_folder):
+#     bag = rosbag2_py.Bag(bag_file)
+#     topics = bag.get_type_and_topic_info()[1].keys()
+    
+#     for topic in topics:
+#         data = []
+#         for topic, msg, t in bag.read_messages(topics=[topic]):
+#             row = [t.to_sec()]
+#             row.extend([getattr(msg, field.name) for field in msg.__slots__])
+#             data.append(row)
+        
+#         df = pd.DataFrame(data, columns=['time'] + [field.name for field in msg.__slots__])
+#         df.to_csv(f"{csv_folder}/{topic.replace('/', '_')}.csv", index=False)
+    
+#     bag.close()
+
+# bag_file = 'rosbag2_2024_05_24-16_08_43_0.db3'
+# csv_folder = 'path_to_output_csv_folder'
+# bag_to_csv(bag_file, csv_folder)
+
+# import pandas as pd
+# from rosbags.rosbag2 import Reader
+# from rosbags.serde import deserialize_cdr
+
+# def bag_to_csv(bag_file, csv_folder):
+#     with Reader(bag_file) as reader:
+#         for connection in reader.connections:
+#             topic = connection.topic
+#             data = []
+#             for _,timestamp, rawdata in reader.messages(connections=reader.connections):
+#                 msg = deserialize_cdr(rawdata, connection.msgtype)
+#                 row = [timestamp / 1e9]  # Convert timestamp to seconds
+#                 if connection.msgtype == 'std_msgs/msg/Float64MultiArray':
+#                     row.extend(msg.data)
+#                 data.append(row)
+
+#             df = pd.DataFrame(data, columns=['time'] + [f'data{i}' for i in range(len(msg.data))])
+#             df.to_csv(f"{csv_folder}/{topic.replace('/', '_')}.csv", index=False)
+
+# bag_file = 'rosbag2_2024_05_24-16_08_43'
+# csv_folder = 'path_to_output_csv_folder'
+# bag_to_csv(bag_file, csv_folder)
+
+# import pandas as pd
+# from rosbags.rosbag2 import Reader
+# from rosbags.typesys import Stores, get_typestore
+
+# def bag_to_csv(bag_folder, csv_folder):
+#     typestore = get_typestore(Stores.ROS2_HUMBLE)  # Utiliser le typestore pour ROS 2 Humble
+#     with Reader(bag_folder) as reader:
+#         reader.open()
+#         for connection in reader.connections:
+#             topic = connection.topic
+#             data = []
+#             for _, timestamp, rawdata in reader.messages(connections=[connection]):
+#                 msg = typestore.deserialize_cdr(rawdata, connection.msgtype)
+#                 row = [timestamp / 1e9]  # Convert timestamp to seconds
+#                 if connection.msgtype == 'std_msgs/msg/Float64MultiArray':
+#                     row.extend(msg.data)
+#                 data.append(row)
+
+#             if connection.msgtype == 'std_msgs/msg/Float64MultiArray':
+#                 df = pd.DataFrame(data, columns=['time'] + [f'data{i}' for i in range(len(msg.data))])
+#                 df.to_csv(f"{csv_folder}/{topic.replace('/', '_')}.csv", index=False)
+
+# bag_folder = 'rosbag2_2024_05_24-16_08_43'  # Chemin du dossier contenant le fichier .db3 et metadata.yaml
+# csv_folder = 'Info_for_traces'
+# bag_to_csv(bag_folder, csv_folder)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import os
+import yaml
+import subprocess
+import time
+from ament_index_python.packages import get_package_share_directory
+
+def generate_config(config_path, H0, ref0):
+    config = {
+        'waterTank1': {
+            'NodeSim': {
+                'ros__parameters': {
+                    'H0': H0,
+                    'ref0': ref0
+                }
+            }
+        }
+    }
+    with open(config_path, 'w') as file:
+        yaml.dump(config, file)
+
+def run_simulation(sim_id, H0, ref0):
+    config_dir = os.path.join(get_package_share_directory('testing'), 'config')
+    config_path = os.path.join(config_dir, f'testing_{sim_id}.yaml')
+    generate_config(config_path, H0, ref0)
+
+    launch_file = f"""
+    import os
+    from ament_index_python.packages import get_package_share_directory
+    from launch import LaunchDescription
+    from launch_ros.actions import Node
+    import launch
+
+    def generate_launch_description():
+        config = '{config_path}'
+
+        node1 = Node(
+            package='testing',
+            executable='NodeSim',
+            namespace='waterTank1',
+            name='NodeSim',
+            parameters=[config]
+        )
+
+        node2 = Node(
+            package='testing',
+            executable='NodeControl',
+            namespace='waterTank1',
+            name='NodeControl',
+            parameters=[config]
+        )
+
+        return LaunchDescription([
+            node1,
+            node2,
+            launch.actions.ExecuteProcess(
+                cmd=['ros2', 'bag', 'record', '-a', '-o', f'output_{sim_id}'],
+                output='screen'
+            )
+        ])
+    """
+    
+    launch_file_path = f'launch_sim_{sim_id}.py'
+    with open(launch_file_path, 'w') as file:
+        file.write(launch_file)
+
+    # Run the launch file
+    subprocess.run(['ros2', 'launch', launch_file_path])
+
+def main():
+    num_simulations = 100  # Nombre de simulations à exécuter
+    for i in range(num_simulations):
+        H0 = 10.0 + i * 0.1  # Modifier H0 pour chaque simulation
+        ref0 = 8.2 + i * 0.1  # Modifier ref0 pour chaque simulation
+        run_simulation(i, H0, ref0)
+        time.sleep(60)  # Attendre que la simulation se termine
+
+if __name__ == '__main__':
+    main()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    import os
+from ament_index_python.packages import get_package_share_directory
+from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument
+from launch.substitutions import LaunchConfiguration
+from launch_ros.actions import Node
+import launch 
+
+
+def generate_launch_description():
+    
+    '''this part is for parameters''' 
+    config = os.path.join(
+    get_package_share_directory('testing'),
+    'config', # repertoire
+    'testing.yaml'
+    )
+    # config = LaunchConfiguration('config')
+    # bag_path = LaunchConfiguration('bag_path')
+
+    node1=Node(
+        package='testing',
+        executable='NodeSim',
+        namespace='waterTank1',
+        name='NodeSim',
+        parameters=[config] # variable contenant les paramètres chargés précédemment
+        )
+    
+    node2=Node(
+        package='testing',
+        executable='NodeControl',
+        namespace='waterTank1',
+        name='NodeControl',
+        parameters=[config] # variable contenant les paramètres chargés précédemment
+        )
+    
+    # bag_output_path = '/home/sekars/Documents/stage/ros2-matlab/bags'
+    # bag_output_path = os.path.join('/home/sekars/Documents/stage/ros2-matlab/bags', 'rosbag_simulation_1')
+
+    # bag_directory = '/home/sekars/Documents/stage/ros2-matlab/bags'
+    
+    return LaunchDescription([
+        # DeclareLaunchArgument(
+        #     'config',
+        #     default_value=os.path.join(get_package_share_directory('testing'), 'config', 'testing.yaml'),
+        #     description='Path to the config file'
+        # ),
+        # DeclareLaunchArgument(
+        #     'bag_path',
+        #     default_value=os.path.join(os.path.expanduser('~'), 'rosbags', 'default_bag'),
+        #     description='Path to save the rosbag file'
+        # ),
+        node1,
+        node2,
+
+        # launch.actions.ExecuteProcess(
+        #      cmd=['ros2', 'bag', 'record', '-a','-o', bag_output_path],
+        #      output='screen'
+        #      )
+        launch.actions.ExecuteProcess(
+             cmd=['ros2', 'bag', 'record', '-a'],
+             output='screen'
+             )
+        ])
+
+

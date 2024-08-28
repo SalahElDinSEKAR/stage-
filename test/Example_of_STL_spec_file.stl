@@ -1,0 +1,13 @@
+# This is a comment. We define first parameters
+param temp_threshold=25, humidity_threshold=50
+
+# Atomic predicates are defined next
+temp_is_ok       := temperature[t] < temp_threshold
+humidity_is_high := humidity[t] > humidity_threshold
+
+# Individual sub-formulas are defined next
+temp_is_ok_all_day := alw (temp_is_ok)
+humidity_is_high_before_noon := ev_[0, 12] (humidity_is_high)
+
+# Final formula
+phi := temp_is_ok_all_day and humidity_is_high_before_noon

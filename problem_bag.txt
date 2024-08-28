@@ -1,0 +1,157 @@
+[INFO] [launch]: All log files can be found below /home/sekars/.ros/log/2024-07-15-14-16-26-585783-argentiere-5385
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [1721045786.589475490] [rosbag2_recorder]: Press SPACE for pausing/resuming
+[INFO] [1721045786.590653660] [rosbag2_storage]: Opened database 'rosbag_simu_1/rosbag_simu_1_0.db3' for READ_WRITE.
+[INFO] [1721045786.591114344] [rosbag2_recorder]: Listening for topics...
+[INFO] [1721045786.591157466] [rosbag2_recorder]: Event publisher thread: Starting
+[INFO] [1721045786.591622296] [rosbag2_recorder]: Subscribed to topic '/rosout'
+[INFO] [1721045786.592038100] [rosbag2_recorder]: Subscribed to topic '/events/write_split'
+[INFO] [1721045786.592092264] [rosbag2_recorder]: Recording...
+[INFO] [NodeSim-1]: process started with pid [5401]
+[INFO] [NodeControl-2]: process started with pid [5403]
+[NodeSim-1] [INFO] [1721045787.204423004] [waterTank1.NodeSim]: Publishing: X_[0] = 8.171104
+[NodeSim-1] [INFO] [1721045787.205387527] [waterTank1.NodeSim]: Publishing: X_[0] = 8.254870
+[NodeSim-1] [INFO] [1721045787.206421470] [waterTank1.NodeSim]: Publishing: X_[0] = 8.361139
+[NodeSim-1] [INFO] [1721045787.207426955] [waterTank1.NodeSim]: Publishing: X_[0] = 8.491918
+[NodeSim-1] [INFO] [1721045787.208414901] [waterTank1.NodeSim]: Publishing: X_[0] = 8.627883
+[NodeSim-1] [INFO] [1721045787.209414896] [waterTank1.NodeSim]: Publishing: X_[0] = 8.763580
+[NodeSim-1] [INFO] [1721045787.210504056] [waterTank1.NodeSim]: Publishing: X_[0] = 8.893437
+[NodeSim-1] [INFO] [1721045787.211434984] [waterTank1.NodeSim]: Publishing: X_[0] = 9.015002
+[NodeSim-1] [INFO] [1721045787.212502700] [waterTank1.NodeSim]: Publishing: X_[0] = 9.126825
+[NodeSim-1] [INFO] [1721045787.213413305] [waterTank1.NodeSim]: Publishing: X_[0] = 9.228468
+[NodeSim-1] [INFO] [1721045787.214439680] [waterTank1.NodeSim]: Publishing: X_[0] = 9.320018
+[NodeSim-1] [INFO] [1721045787.215498327] [waterTank1.NodeSim]: Publishing: X_[0] = 9.401915
+[NodeSim-1] [INFO] [1721045787.216448121] [waterTank1.NodeSim]: Publishing: X_[0] = 9.474794
+[NodeSim-1] [INFO] [1721045787.217410905] [waterTank1.NodeSim]: Publishing: X_[0] = 9.539383
+[NodeSim-1] [INFO] [1721045787.218497946] [waterTank1.NodeSim]: Publishing: X_[0] = 9.596442
+[NodeSim-1] [INFO] [1721045787.219496173] [waterTank1.NodeSim]: Publishing: X_[0] = 9.646723
+[NodeSim-1] [INFO] [1721045787.220449173] [waterTank1.NodeSim]: Publishing: X_[0] = 9.690943
+[NodeSim-1] [INFO] [1721045787.221410755] [waterTank1.NodeSim]: Publishing: X_[0] = 9.729771
+[NodeSim-1] [INFO] [1721045787.222505274] [waterTank1.NodeSim]: Publishing: X_[0] = 9.763822
+[NodeSim-1] [INFO] [1721045787.223504572] [waterTank1.NodeSim]: Publishing: X_[0] = 9.793652
+[NodeSim-1] [INFO] [1721045787.224511688] [waterTank1.NodeSim]: Publishing: X_[0] = 9.819765
+[NodeSim-1] [INFO] [1721045787.225412563] [waterTank1.NodeSim]: Publishing: X_[0] = 9.842608
+[NodeSim-1] [INFO] [1721045787.226506105] [waterTank1.NodeSim]: Publishing: X_[0] = 9.862581
+[NodeSim-1] [INFO] [1721045787.227497843] [waterTank1.NodeSim]: Publishing: X_[0] = 9.880037
+[NodeSim-1] [INFO] [1721045787.228509285] [waterTank1.NodeSim]: Publishing: X_[0] = 9.895288
+[NodeSim-1] [INFO] [1721045787.229409719] [waterTank1.NodeSim]: Publishing: X_[0] = 9.908608
+[NodeSim-1] [INFO] [1721045787.230407214] [waterTank1.NodeSim]: Publishing: X_[0] = 9.920240
+[NodeSim-1] [INFO] [1721045787.231495427] [waterTank1.NodeSim]: Publishing: X_[0] = 9.930396
+[NodeSim-1] [INFO] [1721045787.232493705] [waterTank1.NodeSim]: Publishing: X_[0] = 9.939262
+[NodeSim-1] [INFO] [1721045787.233408035] [waterTank1.NodeSim]: Publishing: X_[0] = 9.947001
+[NodeSim-1] [INFO] [1721045787.234406559] [waterTank1.NodeSim]: Publishing: X_[0] = 9.953755
+[NodeSim-1] [INFO] [1721045787.235436905] [waterTank1.NodeSim]: Publishing: X_[0] = 9.959649
+[NodeSim-1] [INFO] [1721045787.236414728] [waterTank1.NodeSim]: Publishing: X_[0] = 9.964793
+[NodeSim-1] [INFO] [1721045787.237420278] [waterTank1.NodeSim]: Publishing: X_[0] = 9.969282
+[NodeSim-1] [INFO] [1721045787.238469717] [waterTank1.NodeSim]: Publishing: X_[0] = 9.973199
+[NodeSim-1] [INFO] [1721045787.239504911] [waterTank1.NodeSim]: Publishing: X_[0] = 9.976616
+[NodeSim-1] [INFO] [1721045787.240533252] [waterTank1.NodeSim]: Publishing: X_[0] = 9.979598
+[NodeSim-1] [INFO] [1721045787.241431174] [waterTank1.NodeSim]: Publishing: X_[0] = 9.982200
+[NodeSim-1] [INFO] [1721045787.242462285] [waterTank1.NodeSim]: Publishing: X_[0] = 9.984470
+[NodeSim-1] [INFO] [1721045787.243461111] [waterTank1.NodeSim]: Publishing: X_[0] = 9.986451
+[NodeSim-1] [INFO] [1721045787.244461687] [waterTank1.NodeSim]: Publishing: X_[0] = 9.988179
+[NodeSim-1] [INFO] [1721045787.245428984] [waterTank1.NodeSim]: Publishing: X_[0] = 9.989687
+[NodeSim-1] [INFO] [1721045787.246427354] [waterTank1.NodeSim]: Publishing: X_[0] = 9.991002
+[NodeSim-1] [INFO] [1721045787.247427113] [waterTank1.NodeSim]: Publishing: X_[0] = 9.992150
+[NodeSim-1] [INFO] [1721045787.248464702] [waterTank1.NodeSim]: Publishing: X_[0] = 9.993151
+[NodeSim-1] [INFO] [1721045787.249428780] [waterTank1.NodeSim]: Publishing: X_[0] = 9.994025
+[NodeSim-1] [INFO] [1721045787.250427955] [waterTank1.NodeSim]: Publishing: X_[0] = 9.994787
+[NodeSim-1] [INFO] [1721045787.251427369] [waterTank1.NodeSim]: Publishing: X_[0] = 9.995452
+[NodeSim-1] [INFO] [1721045787.252427676] [waterTank1.NodeSim]: Publishing: X_[0] = 9.996032
+[NodeSim-1] [INFO] [1721045787.253428731] [waterTank1.NodeSim]: Publishing: X_[0] = 9.996538
+[NodeSim-1] [INFO] [1721045787.254425691] [waterTank1.NodeSim]: Publishing: X_[0] = 9.996980
+[NodeSim-1] [INFO] [1721045787.255427542] [waterTank1.NodeSim]: Publishing: X_[0] = 9.997365
+[NodeSim-1] [INFO] [1721045787.256442270] [waterTank1.NodeSim]: Publishing: X_[0] = 9.997701
+[NodeSim-1] [INFO] [1721045787.257443215] [waterTank1.NodeSim]: Publishing: X_[0] = 9.997994
+[NodeSim-1] [INFO] [1721045787.258442083] [waterTank1.NodeSim]: Publishing: X_[0] = 9.998250
+[NodeSim-1] [INFO] [1721045787.259437654] [waterTank1.NodeSim]: Publishing: X_[0] = 9.998473
+[NodeSim-1] [INFO] [1721045787.260441753] [waterTank1.NodeSim]: Publishing: X_[0] = 9.998668
+[NodeSim-1] [INFO] [1721045787.261439025] [waterTank1.NodeSim]: Publishing: X_[0] = 9.998838
+[NodeSim-1] [INFO] [1721045787.262441275] [waterTank1.NodeSim]: Publishing: X_[0] = 9.998986
+[NodeSim-1] [INFO] [1721045787.263426672] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999116
+[NodeSim-1] [INFO] [1721045787.264464830] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999228
+[NodeSim-1] [INFO] [1721045787.265433216] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999327
+[NodeSim-1] [INFO] [1721045787.266441111] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999413
+[NodeSim-1] [INFO] [1721045787.267462078] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999488
+[NodeSim-1] [INFO] [1721045787.268442302] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999553
+[NodeSim-1] [INFO] [1721045787.269444774] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999610
+[NodeSim-1] [INFO] [1721045787.270432232] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999660
+[NodeSim-1] [INFO] [1721045787.271427583] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999703
+[NodeSim-1] [INFO] [1721045787.272446761] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999741
+[NodeSim-1] [INFO] [1721045787.273431398] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999774
+[NodeSim-1] [INFO] [1721045787.274431148] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999803
+[NodeSim-1] [INFO] [1721045787.275465939] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999828
+[NodeSim-1] [INFO] [1721045787.276467585] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999850
+[NodeSim-1] [INFO] [1721045787.277431218] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999869
+[NodeSim-1] [INFO] [1721045787.278472222] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999886
+[NodeSim-1] [INFO] [1721045787.279427838] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999900
+[NodeSim-1] [INFO] [1721045787.280430800] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999913
+[NodeSim-1] [INFO] [1721045787.281437659] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999924
+[NodeSim-1] [INFO] [1721045787.282429733] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999934
+[NodeSim-1] [INFO] [1721045787.283429144] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999942
+[NodeSim-1] [INFO] [1721045787.284427854] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999950
+[NodeSim-1] [INFO] [1721045787.285430415] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999956
+[NodeSim-1] [INFO] [1721045787.286428178] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999962
+[NodeSim-1] [INFO] [1721045787.287470597] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999967
+[NodeSim-1] [INFO] [1721045787.288433467] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999971
+[NodeSim-1] [INFO] [1721045787.289430809] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999975
+[NodeSim-1] [INFO] [1721045787.290476301] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999978
+[NodeSim-1] [INFO] [1721045787.291431013] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999981
+[NodeSim-1] [INFO] [1721045787.292478071] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999983
+[NodeSim-1] [INFO] [1721045787.293434150] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999985
+[NodeSim-1] [INFO] [1721045787.294435635] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999987
+[NodeSim-1] [INFO] [1721045787.295428095] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999989
+[INFO] [1721045787.296758403] [rosbag2_recorder]: Subscribed to topic '/parameter_events'
+[NodeSim-1] [INFO] [1721045787.296445345] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999990
+[NodeSim-1] [INFO] [1721045787.297433120] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999991
+[INFO] [1721045787.298648137] [rosbag2_recorder]: Subscribed to topic '/waterTank1/commande_u'
+[NodeSim-1] [INFO] [1721045787.298437445] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999993
+[NodeSim-1] [INFO] [1721045787.299430781] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999993
+[INFO] [1721045787.300370367] [rosbag2_recorder]: Subscribed to topic '/waterTank1/pose'
+[NodeSim-1] [INFO] [1721045787.300465076] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999994
+[NodeSim-1] [INFO] [1721045787.301429317] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999995
+[NodeSim-1] [INFO] [1721045787.302417373] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999996
+[NodeSim-1] [INFO] [1721045787.303414997] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999996
+[NodeSim-1] [INFO] [1721045787.304482843] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999997
+[NodeSim-1] [INFO] [1721045787.305415545] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999997
+[NodeSim-1] [INFO] [1721045787.306492042] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999997
+[NodeSim-1] [INFO] [1721045787.307490940] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999998
+[NodeSim-1] [INFO] [1721045787.308448132] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999998
+[NodeSim-1] [INFO] [1721045787.309413449] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999998
+[NodeSim-1] [INFO] [1721045787.310434100] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999999
+[NodeSim-1] [INFO] [1721045787.311419999] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999999
+[NodeSim-1] [INFO] [1721045787.312499323] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999999
+[NodeSim-1] [INFO] [1721045787.313417143] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999999
+[NodeSim-1] [INFO] [1721045787.314417061] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999999
+[NodeSim-1] [INFO] [1721045787.315504693] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999999
+[NodeSim-1] [INFO] [1721045787.316480170] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999999
+[NodeSim-1] [INFO] [1721045787.317413366] [waterTank1.NodeSim]: Publishing: X_[0] = 9.999999
+[NodeSim-1] [INFO] [1721045787.318496287] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.319500016] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.320509705] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.321435490] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.322477694] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.323487864] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.324468236] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.325434329] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.326436173] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.327434705] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.328470002] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.329437033] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.330437913] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.331435493] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.332470691] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.333432461] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.334477955] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.335467491] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.336475689] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.337441363] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[NodeSim-1] [INFO] [1721045787.338471294] [waterTank1.NodeSim]: Publishing: X_[0] = 10.000000
+[NodeSim-1] [INFO] [1721045787.338829555] [rclcpp]: signal_handler(signum=2)
+[NodeControl-2] [INFO] [1721045787.338829411] [rclcpp]: signal_handler(signum=2)
+[INFO] [NodeSim-1]: process has finished cleanly [pid 5401]
+[INFO] [NodeControl-2]: process has finished cleanly [pid 5403]
+[INFO] [1721045787.602045017] [rosbag2_cpp]: Writing remaining messages from cache to the bag. It may take a while
+[INFO] [1721045787.604595402] [rosbag2_recorder]: Event publisher thread: Exiting
+[INFO] [1721045787.604820036] [rosbag2_recorder]: Recording stopped

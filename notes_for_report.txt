@@ -1,0 +1,15 @@
+ Ensuring safety and meeting temporal specifica-
+tions are critical challenges for long-term robotic tasks. Signal
+temporal logic (STL) has been widely used to systematically
+and rigorously specify these requirements
+
+
+
+Ce stage m’a permit de compléter ma formation, non pas en mettant en pratique ce que j’ai
+appris lors de ma formation d’ingénieur roboticien, mais en apprenant de nouvelles disciplines
+non dispensés dans ma formation, et notamment l’électronique, qui pourtant me paraît essentiel
+pour un roboticien. Nous faisons de l’électronique au cours de notre formation, mais de manière
+très rudimentaire, j’ai pu au cours de mon stage aller plus loin et comprendre plus en détail les
+subtilités de cette discipline. J’ai aussi amélioré mes compétences en mécanique, compétences
+que l’on néglige un peu en robotique, mais sans lesquelles un robot ne marcherait pas. Ainsi ce
+stage m’a permit de compléter pleinement ma formation d’ingénieur généraliste

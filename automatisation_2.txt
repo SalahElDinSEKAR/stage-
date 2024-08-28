@@ -1,0 +1,145 @@
+
+import os
+import subprocess
+import time
+import yaml
+import signal
+import shutil
+import sys
+
+#def generate_config_file(H0, ref0, output_config):
+#    config = {
+#        'waterTank1': {
+#            'NodeSim': {
+#                'ros__parameters': {
+#                    'H0': H0,
+#                    'ref0': ref0
+#                }
+#            }
+#        }
+#    }
+#    with open(output_config, 'w') as file:
+#        yaml.dump(config, file)
+
+def run_simulation(simulation_id, H0, ref0):
+    # Generate a temporary configuration file for this simulation
+#    config_file = f'/home/sekars/Documents/stage/ros2-matlab/src/testing/config/simulation_{simulation_id}.yaml'
+#    generate_config_file(H0, ref0, config_file)
+
+    # bag_path = os.path.join('/home/sekars/Documents/stage/ros2-matlab/bags', f'rosbag_simulation_{simulation_id}')
+    
+
+    # Command to launch the launch file with the generated configuration file
+    launch_command = [
+        'ros2', 'launch', 'testing', 'Nodes_launch.py', f'H0_:={H0}', f'ref0_:={ref0}'
+        #f'config:={config_file}',
+        # f'bag_path:={bag_path}'
+    ]
+
+    
+    # Define the bag directory name	
+    bag_dir = "rosbag_simu_1"
+    
+    # Check if the bag directory exists and delete it if it does
+    if os.path.exists(bag_dir):
+       shutil.rmtree(bag_dir)
+    
+    # Command to start recording the bag
+    record_command = ['ros2', 'bag', 'record', '-a', '-o', bag_dir]
+
+    # Start the launch process
+    launch_process = subprocess.Popen(launch_command)
+    
+    # Start the recording process
+    record_process = subprocess.Popen(record_command)
+
+    # Wait for the simulation to complete (adjust the duration according to your simulation)
+    time.sleep(10.0)
+
+    # Terminate the launch process
+    launch_process.terminate()
+
+    # Terminate the recording process gracefully
+    record_process.send_signal(signal.SIGINT)
+    record_process.wait()
+
+# Number of simulations to run
+num_simulations = 1
+
+# sys.argv[0] is the script name itself
+run_simulation(0,sys.argv[1],sys.argv[2])
+
+#for i in range(num_simulations):
+    # Generate random or specific parameter values
+ #   H0 = 10.0 + i * 1  # For example, you can use a random distribution or a sequence
+  #  ref0 = 12.2 + i * 1
+
+    # Run the simulation with the generated parameters
+  #  run_simulation(i, H0, ref0)
+
+ 
+ 
+ 
+ 
+import os
+import subprocess
+import time
+import signal
+import shutil
+import sys
+
+def run_simulation(simulation_id, H0, ref0):
+    print(f"Running simulation {simulation_id} with H0={H0} and ref0={ref0}")
+    
+    # Command to launch the launch file with the generated configuration file
+    launch_command = [
+        'ros2', 'launch', 'testing', 'Nodes_launch.py', f'H0_:={H0}', f'ref0_:={ref0}'
+    ]
+    print(f"Launch command: {launch_command}")
+
+    # Define the bag directory name    
+    bag_dir = "rosbag_simu_1"
+    
+    # Check if the bag directory exists and delete it if it does
+    if os.path.exists(bag_dir):
+       shutil.rmtree(bag_dir)
+       print(f"Deleted existing bag directory: {bag_dir}")
+    
+    # Command to start recording the bag
+    record_command = ['ros2', 'bag', 'record', '-a', '-o', bag_dir]
+    print(f"Record command: {record_command}")
+
+    # Kill any existing nodes
+    subprocess.run(['pkill', '-f', 'ros2'])
+    print("Killed existing ROS2 nodes")
+
+    # Start the launch process
+    launch_process = subprocess.Popen(launch_command, preexec_fn=os.setsid)
+    print("Started launch process")
+
+    # Start the recording process
+    record_process = subprocess.Popen(record_command, preexec_fn=os.setsid)
+    print("Started recording process")
+
+    # Wait for the simulation to complete (adjust the duration according to your simulation)
+    time.sleep(10.0)
+    print("Simulation running...")
+
+    # Terminate the launch process group
+    os.killpg(os.getpgid(launch_process.pid), signal.SIGINT)
+    launch_process.wait()
+    print("Terminated launch process")
+
+    # Terminate the recording process group
+    os.killpg(os.getpgid(record_process.pid), signal.SIGINT)
+    record_process.wait()
+    print("Terminated recording process")
+
+# Number of simulations to run
+num_simulations = 1
+
+# sys.argv[0] is the script name itself
+run_simulation(0, sys.argv[1], sys.argv[2])
+
+ 
+ 
